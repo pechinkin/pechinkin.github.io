@@ -1,0 +1,33 @@
+@font-face {
+    font-family: "Geist Mono";
+    src: url(../Geist.Mono/GeistMonoVariableVF.ttf) format("truetype");
+}
+
+body {
+    margin: 0;
+    padding: 1vw;
+  }
+
+.pinklogo {
+    width: 98vw;
+}
+
+#author {
+    font-family: 'Geist Mono';
+    font-size: 50px;
+    font-weight: 500;
+    text-align: left;
+}
+
+#title {
+    font-family: 'Geist Mono';
+    font-size: 70px;
+    font-weight: 500;
+    text-align: right;
+}
+
+h1 {
+    font-family: 'Geist Mono', light;
+    font-size: 50px;
+    font-weight: 400;
+}
