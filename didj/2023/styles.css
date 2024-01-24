@@ -26,6 +26,13 @@ body {
     text-align: right;
 }
 
+#text {
+    font-family: 'Geist Mono';
+    font-size: 30px;
+    font-weight: 300;
+    text-align: justify;
+}
+
 h1 {
     font-family: 'Geist Mono', light;
     font-size: 50px;
