@@ -5,8 +5,8 @@
 
 body {
     margin: 0;
-    padding: 1vw;
-  }
+    padding: 1vw 1vw 0 1vw;
+}
 
 .pinklogo {
     width: 98vw;
