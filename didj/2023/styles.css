@@ -33,8 +33,14 @@ body {
     text-align: justify;
 }
 
+#navigation {
+    padding: 0;
+    margin: 0;
+  }
+
 h1 {
     font-family: 'Geist Mono', light;
     font-size: 50px;
     font-weight: 400;
 }
+
