@@ -1,0 +1,284 @@
+body {
+    font-family: "Roboto Mono";
+    font-weight: 400;
+    color: #000;
+    margin: 0;
+    transition: .3s;
+}
+
+.darkBody{
+    background-color: #1D1C1C;
+    color: white;
+    transition: .3s;
+}
+.darkBody a{
+    color: white;
+    transition: .3s;
+}
+.darkBody button{
+    color: white;
+}
+.mama{
+    text-decoration: underline;
+    transition: .5s;
+}
+button{
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: black;
+}
+button p{
+    font-size: 20px !important;
+    font-weight: 400 !important;
+}
+li {
+    list-style-type: none;
+    font-size: 20px;
+}
+.center__img img {
+    width: 100%;
+}
+.left__img {
+    float: left;
+}
+.right__img{
+    float: right;
+}
+a{
+    color: black ;
+}
+section {
+    padding-bottom: 3%;
+}
+blockquote{
+     margin: 0;
+     text-align: end;
+ }
+blockquote p{
+    font-size: 20px;
+}
+.section__picture{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 40%;
+    gap: 5%;
+}
+.section__picture p{
+    font-family: "Manrope";
+    font-weight: 800;
+    font-size: 32px;
+}
+.section__picture img{
+    width: 100%;
+}
+.signature{
+    display: flex;
+    align-items:flex-end;
+}
+.section__picture_text{
+    display: flex;
+    align-items: center;
+}
+.spase {
+    padding-top: 50%;
+}
+.article__text{
+    padding: 4% 12% 0 12%;
+}
+.text__shadow_dasha_1{
+    text-shadow: 0 0 20px #bea96a;
+}
+.text__shadow_dasha_2{
+    text-shadow: 0 0 40px #b0745c;
+}
+.text__shadow_nikita_1{
+    text-shadow: 0 0 20px #5D5a51;
+}
+.text__shadow_nikita_2{
+    text-shadow: 0 0 40px #ae9F82;
+}
+.text__shadow_liza_1{
+    text-shadow: 0 0 20px #00eeee;
+}
+.text__shadow_liza_2{
+    text-shadow: 0 0 40px #4b2d9a;
+}
+.text__shadow_matvey_1{
+    text-shadow: 0 0 20px #042e60;
+}
+.text__shadow_matvey_2{
+    text-shadow: 0 0 40px #2e8b57;
+}
+.text__shadow_danya_1{
+    text-shadow: 0 0 20px #5500ff;
+}
+.text__shadow_danya_2{
+    text-shadow: 0 0 40px #2ff55a;
+}
+.text__shadow_in_1{
+    text-shadow: 0 0 20px #fdff38;
+}
+.text__shadow_in_2{
+    text-shadow: 0 0 40px #003153;
+}
+
+.didj__top{
+    padding-top: 3%;
+}
+.didj__logo{
+    display: flex;
+    justify-content: space-between;
+}
+.didj__logo a{
+    transition: 8s;
+}
+.titleDidj p{
+    font-family: "Manrope";
+    font-weight: 800;
+    margin: 0;
+    font-size: 32px;
+}
+.titleDidj h1{
+    font-family: "Manrope";
+    font-weight: 800;
+    margin: 0;
+    font-size: 54px;
+}
+section p{
+    font-size: 20px;
+}
+footer{
+    padding: 0;
+}
+.traffic__screen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer img{
+    width: 55%;
+}
+footer .traffic__sign{
+    height: 50%;
+}
+.big__screen{
+    display: flex;
+}
+.small__screen{
+    display: none;
+}
+.small__screen a{
+    display: flex;
+    justify-content: center;
+}
+@media (max-width: 1024px) {
+    footer img{
+        width: 70%;
+    }
+    .section__picture p{
+        font-size: 30px;
+    }
+}
+@media (max-width: 768px) {
+    .big__screen{
+        display: none;
+    }
+    .small__screen{
+        display: flex;
+    }
+    .section__picture{
+        display: contents;
+        gap: 0;
+    }
+    .didj__logo{
+        padding: 30px 0;
+    }
+    .section__picture{
+        display: block;
+    }
+}
+@media (max-width: 708px) {
+    .titleDidj h1{
+        font-size: 45px;
+    }
+}
+@media (max-width: 600px) {
+    .titleDidj p{
+        font-size: 20px;
+    }
+    .titleDidj h1{
+        font-size: 35px;
+    }
+    blockquote{
+        font-size: 14px;
+    }
+    section p{
+        font-size: 16px;
+    }
+    li {
+        font-size: 16px;
+    }
+    /*.didj__logo{*/
+    /*    padding-bottom: 10%;*/
+    /*}*/
+}
+@media (max-width: 547px){
+    .section__picture p {
+        font-size: 22px;
+    }
+    .didj__logo svg{
+        width: 190px;
+    }
+    button p{
+        font-size: 12px !important;
+    }
+}
+@media (max-width: 500px){
+    footer img{
+        width: 75%;
+    }
+}
+@media (max-width: 460px){
+    .titleDidj h1{
+        font-size: 28px;
+    }
+    blockquote p{
+        font-size: 13px;
+    }
+}
+@media (max-width: 405px){
+    .didj__logo svg{
+        width: 150px;
+    }
+}
+@media (max-width: 370px){
+    blockquote p{
+        font-size: 12px;
+    }
+    .section__picture p {
+        font-size: 20px;
+    }
+    .didj__logo svg{
+        width: 125px;
+    }
+}
+
+.glowing-svg {
+    filter: drop-shadow(0 0 10px var(--glow-color));
+    animation: glow 1s infinite;
+}
+
+@keyframes glow {
+    0% {
+        filter: drop-shadow(0 0 15px var(--glow-color));
+    }
+    50% {
+        filter: drop-shadow(0 0 15px var(--glow-color));
+    }
+    100% {
+        filter: drop-shadow(0 0 15px var(--glow-color));
+    }
+}
+
+

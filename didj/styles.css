@@ -27,7 +27,6 @@ body {
 .glowing-svg {
     filter: drop-shadow(0 0 10px var(--glow-color));
     animation: glow 1s infinite;
-    transition: filter 1s ease; /* Плавный переход */
 }
 
 @keyframes glow {

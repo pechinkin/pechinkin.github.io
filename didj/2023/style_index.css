@@ -1,0 +1,32 @@
+body {
+    background-color: #FBFAFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.receipt-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* 80% высоты экрана */
+    width: 80vw; /* 80% ширины экрана */
+    overflow-y: auto; /* Добавляет прокрутку, если содержимое не помещается */
+}
+
+.receipt {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.receipt img {
+    display: block;
+    width: 30vh;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
