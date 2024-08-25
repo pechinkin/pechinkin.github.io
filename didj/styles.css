@@ -1,11 +1,86 @@
-@font-face {
-    font-family: "Geist Mono";
-    src: url(Geist.Mono/GeistMonoVariableVF.ttf) format("truetype");
+body {
+    font-family: "Roboto Mono";
+    font-weight: 400;
+    color: #000;
+    margin: 0;
 }
 
-h1 {
+.koolDj{
+    background-position-x: center;
+}
+
+.centerKoolDj{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.centerKoolDj_header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.glowing-svg {
+    filter: drop-shadow(0 0 10px var(--glow-color));
+    animation: glow 1s infinite;
+    transition: filter 1s ease; /* Плавный переход */
+}
+
+@keyframes glow {
+    0% {
+        filter: drop-shadow(0 0 15px var(--glow-color));
+    }
+    50% {
+        filter: drop-shadow(0 0 15px var(--glow-color));
+    }
+    100% {
+        filter: drop-shadow(0 0 15px var(--glow-color));
+    }
+}
+
+.centerKoolDj_whatever {
+    text-align: end;
+}
+.centerKoolDj_archive {
     text-align: center;
-    font-family: 'Geist Mono', light;
-    font-size: 25px;
-    font-weight: 400;
+    padding-top: 30px;
+}
+
+.centerKoolDj_tg {
+    text-align: center;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 80%;
+    left: 20%;
+    right: 20%
+}
+
+.tglink {
+    color: #454444;
+}
+.tglink:hover {
+    color: #33FF00;;
+}
+
+.archive2023 {
+    color: #454444;
+}
+
+.archive2023:hover {
+    color: #FF7A00;;
+}
+
+.highlight-orange {
+    background-color: #FF7A00;
+    padding: 0px 4px;
+}
+
+.highlight-green {
+    background-color: #33FF00;
+    padding: 0px 4px;
 }
