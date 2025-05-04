@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-.inter-regular {
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-}
-
 body {
     margin: 0;
     padding: 0;
@@ -23,52 +16,62 @@ body {
     gap: 0;
     padding: 0;
     box-sizing: border-box;
+    width: 100vw;
 }
 
-.circle {
-    width: 100%;
-    height: 100%;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 1.2em;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    cursor: pointer;
-}
-
-.circle-base {background-color: #0004EE;}
-.circle-yt {background-color: #000000;}
-.circle-didj {background-color: #EE000C;}
-.circle-dev {background-color: #00BD55;}
-.circle-tg {background-color: #000000;}
-.circle-mail {background-color: #000000;}
-
-.circle:hover { background-color: #EC7C26;}
-.circle-base:hover { background-color: #0004EE;}
-
+/* Desktop: 3x3 сетка, квадратная */
 @media (min-width: 768px) {
     .container {
-        width: 800px;
-        height: 800px;
+        aspect-ratio: 1 / 1;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(3, 1fr);
     }
+
     .circle {
-        font-size: 2.0em;
+        font-size: 6.5vw; /* текст зависит от размера круга */
     }
 }
 
+/* Mobile: 2x5 сетка, вертикально вытянутая */
 @media (max-width: 767px) {
     .container {
-        width: 300px;
-        height: 750px;
+        aspect-ratio: 1 / 2;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(5, 1fr);
     }
+
     .circle {
-        font-size: 1.2em;
+        font-size: 12vw;
     }
 }
+
+.circle {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    height: 100%;
+    color: white;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.circle span {
+    font-size: 0.55em;
+    width: 80%;
+    word-break: break-word;
+}
+
+/* Цвета */
+.circle-base { background-color: #0004EE; }
+.circle-yt { background-color: #000000; }
+.circle-didj { background-color: #EE000C; }
+.circle-dev { background-color: #00BD55; }
+.circle-tg { background-color: #000000; }
+.circle-mail { background-color: #000000; }
+
+.circle:hover { background-color: #EC7C26; }
+.circle-base:hover { background-color: #0004EE; }
