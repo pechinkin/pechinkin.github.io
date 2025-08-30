@@ -19,7 +19,6 @@ body {
     width: 100vw;
 }
 
-/* Desktop: 3x3 сетка, квадратная */
 @media (min-width: 768px) {
     .container {
         aspect-ratio: 1 / 1;
@@ -28,11 +27,11 @@ body {
     }
 
     .circle {
-        font-size: 6.5vw; /* текст зависит от размера круга */
+        font-size: 6.5vw;
     }
+
 }
 
-/* Mobile: 2x5 сетка, вертикально вытянутая */
 @media (max-width: 767px) {
     .container {
         aspect-ratio: 1 / 2;
@@ -43,6 +42,8 @@ body {
     .circle {
         font-size: 12vw;
     }
+
+
 }
 
 .circle {
@@ -57,6 +58,7 @@ body {
     transition: transform 0.3s ease, background-color 0.3s ease;
     cursor: pointer;
     line-height: 1;
+    position: relative; /* Для позиционирования language-toggle внутри круга */
 }
 
 .circle span {
@@ -75,3 +77,31 @@ body {
 
 .circle:hover { background-color: #EC7C26; }
 .circle-base:hover { background-color: #0004EE; }
+
+.lang-btn {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: hotpink;
+    color: white;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6em; /* Размер шрифта относительно круга */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.language-toggle {
+    position: absolute;
+    bottom: -16%;
+    right: -16%;
+    width: 32%;
+    height: 32%;
+}
+
+.lang-btn:hover {
+    background-color: #EC7C26;
+}
