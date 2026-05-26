@@ -20,8 +20,8 @@ defineProps({
   },
   position: {
     type: String,
-    default: 'right', // 'left' или 'right'
-    validator: (value) => ['left', 'right'].includes(value)
+    default: 'top-right',
+    validator: (value) => ['top-right', 'top-left', 'bottom-right', 'bottom-left', 'ar2'].includes(value)
   }
 })
 </script>

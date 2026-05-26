@@ -4,83 +4,98 @@
 
 .image-wrapper {
   position: relative;
-  width: 35%;
-  margin-top: -5%;
-  margin-bottom: 10%;
-  margin-left: 14%;
+  width: 50%;
+  margin: -4% auto 7%;
   display: flex;
+  justify-content: center;
   align-items: center;
 
-  @media (max-width: 768px) {
-    width: 70%;
-    margin-left: 14%;
-    margin-top: 8%;
-    margin-bottom: 8%;
-  }
-}
-
-// Симметричный вариант — слева
-.image-wrapper.left {
-  margin-left: auto;
-  margin-right: 14%;
-  flex-direction: row-reverse;
+  max-width: 50vw;
+  max-height: 60vh;
 
   @media (max-width: 768px) {
-    margin-left: auto;
-    margin-right: 14%;
+    width: 90%;
+    margin: 8% auto;
+    max-width: 90vw;
+    max-height: 40vh;
   }
 }
 
 .image {
   width: 100%;
   height: auto;
-  border-radius: 4px;
+  max-width: 40vw;
+  max-height: 60vh;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
+// Общие стили для кружка
 .caption-circle {
   position: absolute;
-  top: 35%;
   width: 25vh;
   height: 25vh;
-  font-size: 0.1vh;
+  font-size: 1.2vh;
+  margin-left: 8px;
   z-index: 2;
 
-  // Правая сторона — ваш оригинальный стиль
-  &.right,
-  .image-wrapper.right & {
-    left: 85%;
-    transform: translateY(-50%) translateX(20%);
-  }
-
-  // Левая сторона — симметрично
-  &.left,
-  .image-wrapper.left & {
-    right: 85%;
-    left: auto;
-    transform: translateY(-50%) translateX(-20%);
-  }
+  // Общая трансформация для центрирования по вертикали
+  transform: translateY(-50%) translateX(20%);
 
   @media (max-width: 768px) {
-    width: 45vw;
-    height: 45vw;
-    font-size: 0.5vw;
-
-    &.right,
-    .image-wrapper.right & {
-      left: 90%;
-      transform: translateY(-50%) translateX(10%);
-    }
-
-    &.left,
-    .image-wrapper.left & {
-      right: 90%;
-      left: auto;
-      transform: translateY(-50%) translateX(-10%);
-    }
+    width: 35vw;
+    height: 35vw;
+    font-size: 2.5vw;
+    transform: translateY(-50%) translateX(10%);
   }
 }
 
-// Поддержка переносов строк в тексте круга
-::v-deep(.caption-circle .text) {
-  white-space: pre-line;
+// Позиции кружка — отдельные правила
+
+.image-wrapper.top-right .caption-circle {
+  top: 8%;
+  left: 1%;
+}
+
+.image-wrapper.top-left .caption-circle {
+  top: 30%;
+  right: 85%;
+  left: auto;
+  transform: translateY(-50%) translateX(-20%);
+
+  @media (max-width: 768px) {
+    transform: translateY(-50%) translateX(-10%);
+  }
+}
+
+.image-wrapper.bottom-right .caption-circle {
+  top: 14%;
+  left: 76%;
+  transform: translateY(-50%) translateX(20%);
+
+  @media (max-width: 768px) {
+    transform: translateY(-50%) translateX(10%);
+  }
+}
+
+.image-wrapper.bottom-left .caption-circle {
+  top: 78%;
+  right: -13%;
+  left: auto;
+  transform: translateY(-50%) translateX(-20%);
+
+  @media (max-width: 768px) {
+    transform: translateY(-50%) translateX(-10%);
+  }
+}
+
+.image-wrapper.ar2 .caption-circle {
+  top: 90%;
+  right: -3%;
+  left: auto;
+  transform: translateY(-50%) translateX(-20%);
+
+  @media (max-width: 768px) {
+    transform: translateY(-50%) translateX(-10%);
+  }
 }
