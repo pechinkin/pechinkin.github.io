@@ -19,16 +19,16 @@
 
 .text-mono {
   font-family: $font-family-secondary;
-  font-size: $font-size-h2;
+  font-size: 2.2vh;
   font-weight: $font-weight-regular;
   color: $text-color-primary;
   line-height: $line-height-normal;
-  margin: 0;
+  margin: -6% 0 10% 0;
   white-space: pre-line;
   word-wrap: break-word;
 
   @media (max-width: 768px) {
-    font-size: $font-size-h2 * 1.1; // Уменьшаем размер шрифта
+    font-size: 1.2vh * 1.1; // Уменьшаем размер шрифта
     padding: 0 6%;
   }
 }

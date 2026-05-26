@@ -4,44 +4,83 @@
 
 .image-wrapper {
   position: relative;
-  width: 50%;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  width: 35%;
+  margin-top: -5%;
+  margin-bottom: 10%;
   margin-left: 14%;
   display: flex;
   align-items: center;
 
   @media (max-width: 768px) {
-    width: 90%;
-    margin-left: 5%;
+    width: 70%;
+    margin-left: 14%;
     margin-top: 8%;
     margin-bottom: 8%;
+  }
+}
+
+// Симметричный вариант — слева
+.image-wrapper.left {
+  margin-left: auto;
+  margin-right: 14%;
+  flex-direction: row-reverse;
+
+  @media (max-width: 768px) {
+    margin-left: auto;
+    margin-right: 14%;
   }
 }
 
 .image {
   width: 100%;
   height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
 }
 
 .caption-circle {
   position: absolute;
-  top: 30%;
-  left: 85%;
-  transform: translateY(-50%) translateX(20%);
+  top: 35%;
   width: 25vh;
   height: 25vh;
-  font-size: 1.2vh;
-  margin-left: 8px;
+  font-size: 0.1vh;
   z-index: 2;
 
-  @media (max-width: 768px) {
-    width: 35vw;
-    height: 35vw;
-    font-size: 2.5vw;
-    left: 90%;
-    transform: translateY(-50%) translateX(10%);
+  // Правая сторона — ваш оригинальный стиль
+  &.right,
+  .image-wrapper.right & {
+    left: 85%;
+    transform: translateY(-50%) translateX(20%);
   }
+
+  // Левая сторона — симметрично
+  &.left,
+  .image-wrapper.left & {
+    right: 85%;
+    left: auto;
+    transform: translateY(-50%) translateX(-20%);
+  }
+
+  @media (max-width: 768px) {
+    width: 45vw;
+    height: 45vw;
+    font-size: 0.5vw;
+
+    &.right,
+    .image-wrapper.right & {
+      left: 90%;
+      transform: translateY(-50%) translateX(10%);
+    }
+
+    &.left,
+    .image-wrapper.left & {
+      right: 90%;
+      left: auto;
+      transform: translateY(-50%) translateX(-10%);
+    }
+  }
+}
+
+// Поддержка переносов строк в тексте круга
+::v-deep(.caption-circle .text) {
+  white-space: pre-line;
 }

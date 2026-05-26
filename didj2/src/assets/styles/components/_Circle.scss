@@ -4,8 +4,8 @@
 
 
 .circle {
-  width: 25vh;
-  height: 25vh;
+  width: 30vh;
+  height: 30vh;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -15,16 +15,22 @@
   font-family: $font-family-primary;
   transition: opacity 0.3s ease;
 
+  padding: 1vh; //
+
   &-text {
     margin: 0;
     padding: 0;
     text-align: center;
     white-space: pre-line; /* Поддерживает \n как перенос */
     word-wrap: break-word;
-    font-size: $font-size-h2; // гарантируем одинаковый размер
+    font-size: 2.4vh; // гарантируем одинаковый размер
     line-height: $line-height-normal;
     color: $text-color-secondary;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+
+    // Ограничиваем ширину текста, чтобы он не заполнял весь круг вплотную
+    max-width: 90%;
+    max-height: 90%;
+    overflow: hidden;
   }
 
 

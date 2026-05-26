@@ -12,7 +12,22 @@
   justify-content: flex-start;
   padding: 20px 0;
   box-sizing: border-box;
+
+  // 🔒 Запрет выделения текста и копирования
+  user-select: none;    // Основное свойство — запрещает выделение
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+  // 🔳 Также можно отключить контекстное меню (ПКМ)
+  pointer-events: auto; // оставляем клики рабочими
 }
+
+// ⚠️ Если нужно, чтобы *внутри* некоторых элементов всё же можно было выделять (например, ввод в поля), используй:
+// .obloga .allowed-to-select {
+//   user-select: text;
+//   -webkit-user-select: text;
+// }
 
 .grid-container {
   position: relative;
@@ -82,6 +97,7 @@
 }
 
 .main-title {
+  font-size: 15.0vh;
   position: absolute;
   top: 50%;
   left: 50%;

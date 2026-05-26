@@ -2,8 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import MainView from "../views/MainView.vue";
 
 const routes = [
-    { path: '/', redirect: '/main' },
-    { path: '/main', component: MainView },
+    { path: '/', component: MainView },
 ];
 
 const router = createRouter({
