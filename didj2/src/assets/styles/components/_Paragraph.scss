@@ -11,8 +11,8 @@
   line-height: $line-height-normal;
 
   @media (max-width: 768px) {
-    padding-left: 6%;
-    padding-right: 6%;
+    padding-left: 1%;
+    padding-right: 1%;
     margin-bottom: 5%;
   }
 }
@@ -28,7 +28,8 @@
   word-wrap: break-word;
 
   @media (max-width: 768px) {
-    font-size: 1.2vh * 1.1; // Уменьшаем размер шрифта
-    padding: 0 6%;
+    font-size: 5.5vw; // Больший размер шрифта для мобильной версии
+    line-height: 1.4;
+    padding: 0 5%;
   }
 }

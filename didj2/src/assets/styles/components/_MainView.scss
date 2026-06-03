@@ -3,44 +3,42 @@
 @use "sass:color";
 
 .obloga {
-  position: relative;
+  position: static; // 👈 не фиксирована — контент идёт ниже
   width: 100%;
-  min-height: 100vh;
+  min-height: 100vh; // Занимает весь экран по высоте
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 20px 0;
-  box-sizing: border-box;
+  padding: 0; // Полный контроль над отступами
 
   // 🔒 Запрет выделения текста и копирования
-  user-select: none;    // Основное свойство — запрещает выделение
+  user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
 
-  // 🔳 Также можно отключить контекстное меню (ПКМ)
-  pointer-events: auto; // оставляем клики рабочими
+  pointer-events: auto;
+
+  // Мобильная версия
+  @media (max-width: 768px) {
+    min-height: auto;
+    margin-bottom: 200%; // Отступ снизу для мобильной версии
+  }
 }
 
-// ⚠️ Если нужно, чтобы *внутри* некоторых элементов всё же можно было выделять (например, ввод в поля), используй:
-// .obloga .allowed-to-select {
-//   user-select: text;
-//   -webkit-user-select: text;
-// }
 
 .grid-container {
   position: relative;
   width: 100%;
   max-width: min(95vw, 95vh * 1.54);
-  margin: 20px auto;
+  margin: 0 auto; // убрали отступ сверху у контейнера внутри obloga
   aspect-ratio: 1.54;
   overflow: visible;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  // Десктопная версия
   @media (min-width: 769px) {
     width: 100dvw;
     height: 100dvh;
@@ -59,45 +57,53 @@
     }
   }
 
-  // Мобильная версия
   @media (max-width: 768px) {
+    // Мобильный контент внутри obloga
     position: relative;
     width: 100%;
     height: auto;
     aspect-ratio: 1.54;
-    margin: 20px 0;
-  }
-}
+    margin: 0 auto;
 
-// Мобильные стили для кругов выносим отдельно
-@media (max-width: 768px) {
-  .circle {
-    width: min(15vw, 15vh) !important;
-    height: min(15vw, 15vh) !important;
-
-    &-text {
-      font-size: clamp(8px, 1.5vw, 16px) !important;
-      line-height: 1.2 !important;
-      white-space: pre-line !important;
-      padding: 2px !important;
+    .circle {
+      position: absolute !important;
+      width: 25vh;
+      height: 25vh;
+      --circle-text-size: 2.0vh; // Размер текста в кругах для мобильной версии
     }
   }
 }
 
-// Очень маленькие экраны
-@media (max-width: 480px) {
-  .circle {
-    width: min(14vw, 14vh) !important;
-    height: min(14vw, 14vh) !important;
+// 👇 СТИЛИ ДЛЯ КОНТЕНТА ПОСЛЕ obloga (добавляем в конец файла, вне блоков выше)
 
-    &-text {
-      font-size: clamp(6px, 1.8vw, 12px) !important;
-    }
+// Контентные блоки — начинаются сразу после obloga, но с отступом
+#obloga {
+  position: static;
+}
+
+// Первый контентный блок после obloga получает отступ сверху, чтобы «не прилипал»
+main > .content-section {
+  // Но так как у нас контент — не в `main`, а просто следующие `div` после `.obloga`, сделаем так:
+  margin-top: 20px; // 👈 минимальный отступ, чтобы сразу не прилипало
+  // остальные стили по умолчанию
+}
+
+// Если контент внутри `<template>` — можно обернуть в `div.content-section` вручную
+// или использовать класс `.content` для всех `#a1`, `#a2`, ...
+.content {
+  margin-top: 24px; // 👈 отступ от obloga до контента
+
+  // Мобильная версия
+  @media (max-width: 768px) {
+    margin-top: 3%;
+    width: 100%;
+    padding: 0 5%;
+    box-sizing: border-box;
   }
 }
 
 .main-title {
-  font-size: 15.0vh;
+  font-size: 128px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -111,12 +117,12 @@
   // Мобильная версия для заголовка
   @media (max-width: 768px) {
     position: absolute;
-    top: 20%;
+    top: 45%;
     left: 0;
     transform: none;
     z-index: -1;
     margin: 0;
-    font-size: clamp(24px, 8vw, 48px);
+    font-size: clamp(80px, 8vw, 148px);
     white-space: normal;
     text-align: center;
     width: 100%;

@@ -14,6 +14,7 @@
   position: absolute;
   font-family: $font-family-primary;
   transition: opacity 0.3s ease;
+  --circle-text-size: 2.4vh; // По умолчанию для десктопа
 
   padding: 1vh; //
 
@@ -23,7 +24,7 @@
     text-align: center;
     white-space: pre-line; /* Поддерживает \n как перенос */
     word-wrap: break-word;
-    font-size: 2.4vh; // гарантируем одинаковый размер
+    font-size: var(--circle-text-size);
     line-height: $line-height-normal;
     color: $text-color-secondary;
 

@@ -4,30 +4,36 @@
 
 .image-wrapper {
   position: relative;
-  width: 50%;
+  width: 80%;
   margin: -4% auto 7%;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  max-width: 50vw;
-  max-height: 60vh;
+  max-width: 80vw;
+  max-height: 90vh;
 
   @media (max-width: 768px) {
     width: 90%;
     margin: 8% auto;
     max-width: 90vw;
-    max-height: 40vh;
+    max-height: 50vh;
+    justify-content: center;
+    align-items: center;
   }
 }
 
 .image {
   width: 100%;
   height: auto;
-  max-width: 40vw;
-  max-height: 60vh;
+  max-width: 80vw;
+  max-height: 50vh;
   object-fit: contain;
   border-radius: 8px;
+
+  @media (max-width: 768px) {
+    max-height: 60vh;
+  }
 }
 
 // Общие стили для кружка
@@ -45,7 +51,7 @@
   @media (max-width: 768px) {
     width: 35vw;
     height: 35vw;
-    font-size: 2.5vw;
+    --circle-text-size: 1.6vh;
     transform: translateY(-50%) translateX(10%);
   }
 }
