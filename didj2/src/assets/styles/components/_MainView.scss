@@ -135,14 +135,14 @@ main > .content-section {
   font-weight: $font-weight-regular;
   color: $text-color-primary;
   line-height: $line-height-normal;
-  margin: -6% 0 10% 0;
+  margin: 5% 0 15% 0;
   white-space: pre-line;
   word-wrap: break-word;
   text-decoration: underline;
   text-align: center;
 
   @media (max-width: 768px) {
-    font-size: 3.6vw; // Больший размер шрифта для мобильной версии
+    font-size: 4.0vw; // Больший размер шрифта для мобильной версии
     line-height: 1.4;
     padding: 0 5%;
   }
