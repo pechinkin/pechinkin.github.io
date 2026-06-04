@@ -128,3 +128,22 @@ main > .content-section {
     width: 100%;
   }
 }
+
+.top {
+  font-family: $font-family-secondary;
+  font-size: 2.2vh;
+  font-weight: $font-weight-regular;
+  color: $text-color-primary;
+  line-height: $line-height-normal;
+  margin: -6% 0 10% 0;
+  white-space: pre-line;
+  word-wrap: break-word;
+  text-decoration: underline;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 3.6vw; // Больший размер шрифта для мобильной версии
+    line-height: 1.4;
+    padding: 0 5%;
+  }
+}
