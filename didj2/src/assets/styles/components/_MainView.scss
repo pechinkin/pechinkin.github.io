@@ -2,6 +2,14 @@
 @use '../base/typography' as *;
 @use "sass:color";
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
 .obloga {
   position: static; // 👈 не фиксирована — контент идёт ниже
   width: 100%;
@@ -23,7 +31,7 @@
   // Мобильная версия
   @media (max-width: 768px) {
     min-height: auto;
-    margin-bottom: 137%; // Отступ снизу для мобильной версии
+    margin-bottom: 119%; // Отступ снизу для мобильной версии
   }
 }
 
@@ -117,7 +125,7 @@ main > .content-section {
   // Мобильная версия для заголовка
   @media (max-width: 768px) {
     position: absolute;
-    top: 40%;
+    top: 44%;
     left: 0;
     transform: none;
     z-index: -1;
@@ -140,6 +148,7 @@ main > .content-section {
   word-wrap: break-word;
   text-decoration: underline;
   text-align: center;
+  transition: color 0.8s ease;
 
   @media (max-width: 768px) {
     font-size: 4.0vw; // Больший размер шрифта для мобильной версии
@@ -147,3 +156,4 @@ main > .content-section {
     padding: 0 5%;
   }
 }
+

@@ -5,7 +5,7 @@
 .image-wrapper {
   position: relative;
   width: 80%;
-  margin: -4% auto 7%;
+  margin: -3% auto 7%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,7 +15,7 @@
 
   @media (max-width: 768px) {
     width: 90%;
-    margin: 8% auto;
+    margin: 15% auto 15%;
     max-width: 90vw;
     max-height: 50vh;
     justify-content: center;
@@ -61,48 +61,59 @@
 
 .image-wrapper.top-right .caption-circle {
   top: 8%;
-  left: 1%;
+  left: 22%;
+
+  @media (max-width: 768px) {
+    top: 5%;
+    left: -15%;
+  }
 }
 
 .image-wrapper.top-left .caption-circle {
-  top: 30%;
-  right: 85%;
-  left: auto;
+  top: 85%;
+  left: 92%;
   transform: translateY(-50%) translateX(-20%);
 
   @media (max-width: 768px) {
     transform: translateY(-50%) translateX(-10%);
+    top: 80%;
+    left: 70%;
   }
 }
 
 .image-wrapper.bottom-right .caption-circle {
-  top: 14%;
-  left: 76%;
+  top: 5%;
+  left: 85%;
   transform: translateY(-50%) translateX(20%);
 
   @media (max-width: 768px) {
     transform: translateY(-50%) translateX(10%);
+    top: 1%;
+    left: 61%;
   }
 }
 
 .image-wrapper.bottom-left .caption-circle {
-  top: 78%;
-  right: -13%;
-  left: auto;
+  top: 33%;
+  right: 18%;
   transform: translateY(-50%) translateX(-20%);
 
   @media (max-width: 768px) {
+    top: 15%;
+    right: -16%;
     transform: translateY(-50%) translateX(-10%);
   }
 }
 
 .image-wrapper.ar2 .caption-circle {
-  top: 90%;
-  right: -3%;
+  top: 87%;
+  right: 23%;
   left: auto;
   transform: translateY(-50%) translateX(-20%);
 
   @media (max-width: 768px) {
     transform: translateY(-50%) translateX(-10%);
+    top: 92%;
+    right: -15%;
   }
 }
