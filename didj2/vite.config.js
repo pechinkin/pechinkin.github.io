@@ -4,14 +4,8 @@ import vue from '@vitejs/plugin-vue'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue()],
-
-/*
-  server: {
-    host: '127.0.0.1',  // принудительно используем IPv4
-    port: 1025,
-    strictPort: true,    // не переключаться на другой порт если 5173 занят
-    open: true          // автоматически открыть браузер
+  base: '/didj2/',  // <-- это главное!
+  build: {
+    outDir: 'didj2build'  // папка, куда соберется проект (в корне репозитория)
   }
-*/
-
 })
