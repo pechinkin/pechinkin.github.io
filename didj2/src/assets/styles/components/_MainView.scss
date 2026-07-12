@@ -1,0 +1,159 @@
+@use '../variables' as *;
+@use '../base/typography' as *;
+@use "sass:color";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.obloga {
+  position: static; // 👈 не фиксирована — контент идёт ниже
+  width: 100%;
+  min-height: 100vh; // Занимает весь экран по высоте
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0; // Полный контроль над отступами
+
+  // 🔒 Запрет выделения текста и копирования
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+  pointer-events: auto;
+
+  // Мобильная версия
+  @media (max-width: 768px) {
+    min-height: auto;
+    margin-bottom: 119%; // Отступ снизу для мобильной версии
+  }
+}
+
+
+.grid-container {
+  position: relative;
+  width: 100%;
+  max-width: min(95vw, 95vh * 1.54);
+  margin: 0 auto; // убрали отступ сверху у контейнера внутри obloga
+  aspect-ratio: 1.54;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: 769px) {
+    width: 100dvw;
+    height: 100dvh;
+    min-width: 300px;
+    min-height: 200px;
+    margin: auto;
+    overflow: hidden;
+
+    @media (max-aspect-ratio: 1.54) {
+      width: 100vw;
+      height: auto;
+    }
+    @media (min-aspect-ratio: 1.54) {
+      width: auto;
+      height: 100vh;
+    }
+  }
+
+  @media (max-width: 768px) {
+    // Мобильный контент внутри obloga
+    position: relative;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.54;
+    margin: 0 auto;
+
+    .circle {
+      position: absolute !important;
+      width: 24vh;
+      height: 24vh;
+      --circle-text-size: 1.9vh; // Размер текста в кругах для мобильной версии
+    }
+  }
+}
+
+// 👇 СТИЛИ ДЛЯ КОНТЕНТА ПОСЛЕ obloga (добавляем в конец файла, вне блоков выше)
+
+// Контентные блоки — начинаются сразу после obloga, но с отступом
+#obloga {
+  position: static;
+}
+
+// Первый контентный блок после obloga получает отступ сверху, чтобы «не прилипал»
+main > .content-section {
+  // Но так как у нас контент — не в `main`, а просто следующие `div` после `.obloga`, сделаем так:
+  margin-top: 20px; // 👈 минимальный отступ, чтобы сразу не прилипало
+  // остальные стили по умолчанию
+}
+
+// Если контент внутри `<template>` — можно обернуть в `div.content-section` вручную
+// или использовать класс `.content` для всех `#a1`, `#a2`, ...
+.content {
+  margin-top: 24px; // 👈 отступ от obloga до контента
+
+  // Мобильная версия
+  @media (max-width: 768px) {
+    margin-top: 3%;
+    width: 100%;
+    padding: 0 5%;
+    box-sizing: border-box;
+  }
+}
+
+.main-title {
+  font-size: 128px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  pointer-events: none;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+
+  // Мобильная версия для заголовка
+  @media (max-width: 768px) {
+    position: absolute;
+    top: 44%;
+    left: 0;
+    transform: none;
+    z-index: -1;
+    margin: 0;
+    font-size: clamp(80px, 8vw, 148px);
+    white-space: normal;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.top {
+  font-family: $font-family-secondary;
+  font-size: 2.2vh;
+  font-weight: $font-weight-regular;
+  color: $text-color-primary;
+  line-height: $line-height-normal;
+  margin: 5% 0 8% 0;
+  white-space: pre-line;
+  word-wrap: break-word;
+  text-decoration: underline;
+  text-align: center;
+  transition: color 0.8s ease;
+
+  @media (max-width: 768px) {
+    font-size: 4.0vw; // Больший размер шрифта для мобильной версии
+    line-height: 1.4;
+    padding: 0 5%;
+  }
+}
+

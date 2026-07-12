@@ -1,0 +1,12 @@
+// 1. Сброс и базовые стили
+@use './base/reset';
+@use './base/fonts';
+@use './base/typography';
+
+// 2. Компоненты UI
+@use './components/Circle';
+@use './components/Paragraph';
+@use './components/Picture';
+
+// 3. Views
+@use './components/MainView';

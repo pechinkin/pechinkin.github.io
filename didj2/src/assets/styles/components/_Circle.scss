@@ -1,0 +1,38 @@
+@use '../variables' as *;
+@use '../base/typography' as *;
+@use "sass:color";
+
+
+.circle {
+  width: 30vh;
+  height: 30vh;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: absolute;
+  font-family: $font-family-primary;
+  transition: opacity 0.3s ease;
+  --circle-text-size: 2.4vh; // По умолчанию для десктопа
+
+  padding: 1vh; //
+
+  &-text {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    white-space: pre-line; /* Поддерживает \n как перенос */
+    word-wrap: break-word;
+    font-size: var(--circle-text-size);
+    line-height: $line-height-normal;
+    color: $text-color-secondary;
+
+    // Ограничиваем ширину текста, чтобы он не заполнял весь круг вплотную
+    max-width: 90%;
+    max-height: 90%;
+    overflow: hidden;
+  }
+
+
+}

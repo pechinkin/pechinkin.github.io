@@ -1,0 +1,119 @@
+@use '../variables' as *;
+@use '../base/typography' as *;
+@use "sass:color";
+
+.image-wrapper {
+  position: relative;
+  width: 80%;
+  margin: -3% auto 7%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 80vw;
+  max-height: 90vh;
+
+  @media (max-width: 768px) {
+    width: 90%;
+    margin: 15% auto 15%;
+    max-width: 90vw;
+    max-height: 50vh;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  max-width: 80vw;
+  max-height: 50vh;
+  object-fit: contain;
+  border-radius: 8px;
+
+  @media (max-width: 768px) {
+    max-height: 60vh;
+    border-radius: 4px;
+  }
+}
+
+// Общие стили для кружка
+.caption-circle {
+  position: absolute;
+  width: 25vh;
+  height: 25vh;
+  font-size: 1.2vh;
+  margin-left: 8px;
+  z-index: 2;
+
+  // Общая трансформация для центрирования по вертикали
+  transform: translateY(-50%) translateX(20%);
+
+  @media (max-width: 768px) {
+    width: 35vw;
+    height: 35vw;
+    --circle-text-size: 1.6vh;
+    transform: translateY(-50%) translateX(10%);
+  }
+}
+
+// Позиции кружка — отдельные правила
+
+.image-wrapper.top-right .caption-circle {
+  top: 8%;
+  left: 22%;
+
+  @media (max-width: 768px) {
+    top: 5%;
+    left: -15%;
+  }
+}
+
+.image-wrapper.top-left .caption-circle {
+  top: 85%;
+  left: 92%;
+  transform: translateY(-50%) translateX(-20%);
+
+  @media (max-width: 768px) {
+    transform: translateY(-50%) translateX(-10%);
+    top: 80%;
+    left: 70%;
+  }
+}
+
+.image-wrapper.bottom-right .caption-circle {
+  top: 5%;
+  left: 85%;
+  transform: translateY(-50%) translateX(20%);
+
+  @media (max-width: 768px) {
+    transform: translateY(-50%) translateX(10%);
+    top: 1%;
+    left: 61%;
+  }
+}
+
+.image-wrapper.bottom-left .caption-circle {
+  top: 33%;
+  right: 18%;
+  transform: translateY(-50%) translateX(-20%);
+
+  @media (max-width: 768px) {
+    top: 15%;
+    right: -16%;
+    transform: translateY(-50%) translateX(-10%);
+  }
+}
+
+.image-wrapper.ar2 .caption-circle {
+  top: 87%;
+  right: 23%;
+  left: auto;
+  transform: translateY(-50%) translateX(-20%);
+
+  @media (max-width: 768px) {
+    transform: translateY(-50%) translateX(-10%);
+    top: 92%;
+    right: -15%;
+  }
+}
