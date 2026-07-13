@@ -6,7 +6,8 @@ const routes = [
 ];
 
 const router = createRouter({
-    history: createWebHistory(),
+    // Передаем тот же базовый путь, что и в Vite
+    history: createWebHistory('/didj2/didj2build/'),
     routes,
 });
 
